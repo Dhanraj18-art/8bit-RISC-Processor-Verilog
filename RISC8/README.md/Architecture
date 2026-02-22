@@ -1,0 +1,10 @@
+[ opcode(3) | rs(2) | rt(2) | unused(1) ]
+Supported Instructions:
+
+ADD
+
+SUB
+
+AND
+
+OR
