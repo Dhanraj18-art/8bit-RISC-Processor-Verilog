@@ -1,1 +1,1 @@
-# 8bit-RISC-Processor-Verilog
+# 8bit-RISC-Processor-VerilogThis project implements a custom 8-bit RISC processor designed using Verilog HDL. The processor architecture includes modular components such as ALU, Register File, Program Counter, Instruction Memory, and Control Unit. The design is verified through RTL simulation and waveform analysis.
