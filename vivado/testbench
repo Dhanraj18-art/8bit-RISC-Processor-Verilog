@@ -1,0 +1,39 @@
+`timescale 1ns/1ps
+
+module processor_tb;
+
+reg clk;
+reg reset;
+wire [7:0] led;
+
+// Instantiate DUT
+processor_top DUT (
+    .clk(clk),
+    .reset(reset),
+    .led(led)
+);
+
+// Generate 100 MHz clock
+always #5 clk = ~clk;   // 10ns period
+
+initial begin
+    clk = 0;
+    reset = 1;
+
+    // Hold reset for 20ns
+    #20;
+    reset = 0;
+
+    // Run simulation for 200ns
+    #200;
+
+    $finish;
+end
+
+// Monitor signals in console
+initial begin
+    $monitor("Time=%0t | Reset=%b | LED=%d",
+              $time, reset, led);
+end
+
+endmodule
