@@ -1,0 +1,49 @@
+🧰 Step 1 — Open Command Prompt in Project Folder
+Go to your folder where all files are stored:
+Example:
+
+pc.v
+instruction_memory.v
+register_file.v
+alu.v
+control_unit.v
+processor_top.v
+tb_processor.v
+Open CMD in that folder:
+
+Shift + Right Click → Open Command Window Here
+OR
+
+cd Desktop\risc64
+⚙️ Step 2 — Compile (Important Command)
+Type:
+Bash
+iverilog -o risc_tb pc.v instruction_memory.v register_file.v alu.v control_unit.v processor_top.v tb_processor.v
+If no error → compilation successful.
+It will create a file:
+
+risc_tb.vvp
+▶️ Step 3 — Run Simulation
+Bash
+vvp risc_tb
+After running, this file will be created:
+
+processor.vcd
+📊 Step 4 — Open Waveform
+Bash
+gtkwave processor.vcd
+If GTKWave path not set, use full path:
+Bash
+"C:\Users\dhanr\Downloads\gtkwave-3.3.100-bin-win64\gtkwave64\bin\gtkwave.exe" processor.vcd
+📈 Step 5 — Inside GTKWave
+Add these signals:
+
+clk
+instruction
+opcode
+read_data1
+read_data2
+alu_op
+alu_result
+result
+Then click Append → Insert → Zoom Fit.
